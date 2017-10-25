@@ -1,0 +1,8 @@
+node default{
+
+include lamp
+		      }
+
+
+
+
