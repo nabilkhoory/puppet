@@ -26,7 +26,7 @@ package { 'php5':
     }
 
 # ensure info.php file exists
-file { '/var/www/html/info.php':
+file { '/var/www/html/index.php':
   ensure => file,
     content => '<?php  echo "nabil puppet"; ?>',    # phpinfo code
       require => Package['apache2'],        # require 'apache2' package before creating
