@@ -19,8 +19,8 @@ service { 'apache2':
 
 
 
-# install php5 package
-package { 'php5':
+# install php package
+package { 'php':
   require => Exec['apt-update'],        # require 'apt-update' before installing
     ensure => installed,
     }
@@ -31,6 +31,14 @@ file { '/var/www/html/index.php':
     content => '<?php  echo "nabil puppet"; ?>',    # phpinfo code
       require => Package['apache2'],        # require 'apache2' package before creating
       }
+
+package { 'libapache2-mod-php':
+  require => Exec['apt-update'],        # require 'apt-update' before installing
+      ensure => installed,
+          }
+
+
+
 
 
 }
